@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        margin: 0px;
+    }
+    </style>    
+</head>
+<body data-rsssl="1">
+    <canvas id="canvas"></canvas>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> 
+            </script>
+        <script type="text/javascript">
+        function Banner(){
+            var keyword = "PEDRO";
+                var canvas;
+                var context;
+
+                var bigCanvas;
+                var bigContext;
+
+                var denseness = 10;
+               
+            var parts = [];
+
+                var mouse = {x:-100,y:-100};
+                var mouseOnScreen = false;
+
+                var itercount = 0;
+                var itertot = 40;
+
+            this.initialize = function(canvas_id){
+                canvas = document.getElementById(canvas_id);
+                context = canvas.getContext('2d');
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                bgCanvas = document.createElement('canvas');
+                bgContext = bgCanvas.getContext('2d');
+
+                bgCanvas.width = window.innerWidth;
+                bgCanvas.height = window.innerHeight; 
+
+                canvas.addEventListener('mouse.mousemove', MouseMove, false);
+                canvas.addEventListener('mouseout', MouseOut, false);
+                    start();
+            }
+            
+            var start = function(){
+
+                bgContext.fillStyle = "#000000";
+                bgContext.font = '300px impact';
+                bgContext.fillText(keyword, 85, 275);
+
+                clear();
+                getCoords();
+            }
+            
+
+        </script>
+</body>
+</html>
